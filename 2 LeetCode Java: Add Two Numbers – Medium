@@ -1,0 +1,69 @@
+Problem:
+You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 0 -> 8
+
+Thoughts:
+This problem is given by an easy way. The numbers are stored reversely so that we could add from the left to right. The thing to keep in mind is that the two numbers might not have the same length.
+
+The most clear way to handle this is to iterate over the two numbers list, iteration continues until reaches the end of the longer list. When the shorter list reaches the end already, consider the digit to be zero.
+
+Solutions:
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode n1 = l1;
+        ListNode n2 = l2;
+        ListNode fakeHead = new ListNode(-1);
+        ListNode result = fakeHead;
+        int toAdd = 0;
+        while(!(n1 == null && n2 == null)){
+            int v1 = 0;
+            int v2 = 0;
+            if (n1 != null){
+                v1 = n1.val;
+                n1 = n1.next;
+            }
+            if (n2 != null){
+                v2 = n2.val;
+                n2 = n2.next;
+            }
+            int tmp = v1 + v2 + toAdd;
+            result.next = new ListNode(tmp % 10);
+            result = result.next;
+            toAdd = tmp / 10;
+
+        }
+        if (toAdd > 0){
+            result.next = new ListNode(toAdd);
+        }
+        return fakeHead.next;
+    }
+}
+
+
+
+
+My goal is to join Google
+
+You'll get all the deep information in this solution.
+
+I started coding at 14 years old in 2015. I'm the Founder & CEO of Starnote English School where more than 5 million students are learning English and a Partner of Softlab IT where 65+ Software Engineers are working together. I made 10 Android apps and 20+ websites but I've more than 6 years of working experience as a Software Engineer.
+
+Let's connect If you have any opportunity or meaningful relationship.
+
+Personal Info:
+Ariful Islam
++8801716299426
+arifulislamblue.com
+github.com/arifulislamblue
+arifulislamblue@gmail.com
+linkedIn.com/in/arifulislamblue
