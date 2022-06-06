@@ -1,0 +1,45 @@
+Problem:
+Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For “bbbbb” the longest substring is “b”, with the length of 1.
+
+Thoughts:
+Keep a set of flags to indicate what character has appeared. We could use a HashSet
+
+There could be a optimization about the HashSet. Instead to use a set of character, use a boolean array of 256 elements saves more space when n becomes larger (n is the number of elements in the given array). Because a Character takes 16-bit and a boolean only takes 1 bit. So no matter what n is, using boolean array only takes 256 bit at most.
+
+Solutions:
+This is the optimized version using boolean array.
+
+public class Solution {
+  public int lengthOfLongestSubstring(String s) {
+    int max = 0;
+    Map<Character, Integer> map = new HashMap<>();
+    // range is [start, i]
+    int start = 0;
+    for (int i = 0; i < s.length(); i++) {
+      if (map.containsKey(s.charAt(i))) {
+        start = Math.max(map.get(s.charAt(i)) + 1, start);
+      }
+      max = Math.max(max, i - start + 1);
+      map.put(s.charAt(i), i);
+    }
+    return max;
+  }
+}
+
+
+
+My goal is to join Google
+
+You'll get all the deep information in this solution.
+
+I started coding at 14 years old in 2015. I'm the Founder & CEO of Starnote English School where more than 5 million students are learning English and a Partner of Softlab IT where 65+ Software Engineers are working together. I made 10 Android apps and 20+ websites but I've more than 6 years of working experience as a Software Engineer.
+
+Let's connect If you have any opportunity or meaningful relationship.
+
+Personal Info:
+Ariful Islam
++8801716299426
+arifulislamblue.com
+github.com/arifulislamblue
+arifulislamblue@gmail.com
+linkedIn.com/in/arifulislamblue
