@@ -1,4 +1,17 @@
-Hello, hope you're happy with your family.
+My goal is to join Google
+
+You'll get all the deep information in this solution.
+
+I started coding at 14 years old in 2015. I'm the Founder & CEO of Starnote English School where more than 5 million students are learning English and a Partner of Softlab IT where 65+ Software Engineers are working together. I made 10 Android apps and 20+ websites but I've more than 6 years of working experience as a Software Engineer.
+
+Personal Info:
+Ariful Islam
++8801716299426
+arifulislamblue.com
+github.com/arifulislamblue
+arifulislamblue@gmail.com
+linkedIn.com/in/arifulislamblue
+
 
 Question:
 https://leetcode.com/problems/two-sum/description/
@@ -27,6 +40,7 @@ The time complexity is O(n)
 The space complexity is O(n)
 
 Solution:
+
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         if (nums == null) return null;
